@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "C5C06F83A954A12998E2A7B05B600B7D",
+  "keywordClasses": [
+    {
+      "name": "com.herokuapp.katalon_demo_cura.LoginSteps",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

@@ -1,0 +1,30 @@
+{
+  "keywordFileContentHash": "698E210AB39449585DF8A9EFB77729B5",
+  "keywordClasses": [
+    {
+      "name": "com.herokuapp.katalon_demo_cura.TestDataHelper",
+      "keywordMethods": [
+        {
+          "name": "convertDataFileToListOfMaps",
+          "parameters": [
+            {
+              "name": "dataFileName",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}

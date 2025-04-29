@@ -1,0 +1,30 @@
+{
+  "keywordFileContentHash": "F2CC3325E3FB525BD9930131557DF87C",
+  "keywordClasses": [
+    {
+      "name": "keyword.com.herokuapp.katalon_demo_cura.RadioHelper",
+      "keywordMethods": [
+        {
+          "name": "selectHealthcareProgram",
+          "parameters": [
+            {
+              "name": "programName",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": "/**\r\n     * Selects a healthcare program radio button using XPath with contains() based on the label.\r\n     * Example: Medicare, Medicaid, or None\r\n     */"
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
