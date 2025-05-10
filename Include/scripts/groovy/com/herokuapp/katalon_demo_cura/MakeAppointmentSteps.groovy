@@ -76,10 +76,10 @@ class MakeAppointmentSteps {
 			radioHelper.selectHealthcareProgram(data.get("healthcare_program"))
 			WebUI.delay(1)
 			println("visitdate "+ data.get("visit_date"))
-//			WebUI.click(findTestObject("Object Repository/Make_Appointment/input_txt_VisitDate"))
-//			WebUI.clearText(findTestObject("Object Repository/Make_Appointment/input_txt_VisitDate"))
+			//			WebUI.click(findTestObject("Object Repository/Make_Appointment/input_txt_VisitDate"))
+			//			WebUI.clearText(findTestObject("Object Repository/Make_Appointment/input_txt_VisitDate"))
 			WebUI.setText(findTestObject("Object Repository/Make_Appointment/input_txt_VisitDate"), data.get("visit_date"))
-//			WebUI.delay(1)
+			//			WebUI.delay(1)
 			WebUI.setText(findTestObject("Object Repository/Make_Appointment/textarea_Comment_comment"), data.get("comment"))
 			WebUI.click(findTestObject("Object Repository/Make_Appointment/button_Book Appointment"))
 		}
@@ -88,10 +88,11 @@ class MakeAppointmentSteps {
 	@Then("I verify the text: (.*) showed")
 	public void i_verify_the_text_succesText_showed(text) {
 		//WebUI.verifyElementVisible(findTestObject('Object Repository/Page_CURA Healthcare Service/h2_Make Appointment'))
-		boolean isPresentSuccessText = WebUI.verifyTextPresent(text, false)
+		boolean isPresentSuccessText = WebUI.verifyElementPresent(findTestObject('Object Repository/Make_Appointment/text_subtitle_please_be_informed', [('text'): text]), 10)
 		if (!isPresentSuccessText) {
 			assert false: "Error, Success Text is not showed"
 		}
+		assert true
 		WebUI.closeBrowser()
 	}
 }

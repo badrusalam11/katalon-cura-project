@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "744190DD06C3808C9246ADD11BBF76DC",
+  "keywordFileContentHash": "C49AB73E2C27D095ED1D85494350DC5B",
   "keywordClasses": [
     {
       "name": "com.herokuapp.katalon_demo_cura.MakeAppointmentSteps",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
