@@ -7,6 +7,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.testcase.TestCase
@@ -46,6 +47,7 @@ import keyword.com.herokuapp.katalon_demo_cura.RadioHelper
 import org.openqa.selenium.Keys
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.Alert
+import com.badru.externaldata.GoogleSheetReader
 
 
 class MakeAppointmentSteps {
@@ -67,7 +69,15 @@ class MakeAppointmentSteps {
 
 	@When("I make appointment and fill all the fields with: (.*)")
 	public void i_make_appointment_and_fill_all_the_fields_with_datafile(String dataFile) {
-		List<Map<String, String>> dataMap = dataHelper.convertDataFileToListOfMaps(dataFile)
+		// Using excel data
+		// List<Map<String, String>> dataMap = dataHelper.convertDataFileToListOfMaps(dataFile)
+		// Using google spreadsheet
+		String keyPath     = "config/sa-key.json"
+		String spreadsheetId = "1-9rIx1cILw4WDUEO8vInJywWdDxatel9Vkluu6u3QNY"
+		String range         = "Sheet1!A1:E"
+		String keyFullPath =  RunConfiguration.getProjectDir() + "/" + keyPath
+		def dataMap = GoogleSheetReader.read(keyFullPath, spreadsheetId, range)
+		
 		for (Map<String, String> data : dataMap) {
 			WebUI.selectOptionByValue(findTestObject('Object Repository/Make_Appointment/select_facility'),data.get("facility"), false)
 			if (data.get("check_list_apply")== ("true").toLowerCase()) {

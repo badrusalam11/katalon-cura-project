@@ -14,3 +14,5 @@ build
 .classpath
 
 .project
+sa-key.json
+.cache
